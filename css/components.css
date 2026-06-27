@@ -105,10 +105,19 @@ header.scrolled {
   margin: 0 auto;
 }
 
+.nav-brand {
+  display: flex;
+  align-items: center;
+  max-width: calc(100% - 110px); /* Leave room for JELAJAHI button */
+}
+
 .nav-brand img {
-  height: 45px;
+  max-height: 45px;
+  max-width: 100%;
   width: auto;
-  transition: transform var(--transition-normal);
+  height: auto;
+  object-fit: contain;
+  transition: all var(--transition-normal);
   filter: brightness(0) invert(1);
 }
 
