@@ -188,17 +188,36 @@
   }
 }
 
-/* --- PENTING 2.6: Navbar small screens --- */
-@media (max-width: 360px) {
+/* --- PENTING 2.6: Navbar mobile — Semua ukuran layar di bawah 768px --- */
+@media (max-width: 767px) {
   .navbar-container {
-    padding: 10px 12px;
+    padding: 10px var(--space-sm);
+    gap: 8px;
   }
   .nav-brand img {
     height: 36px;
+    max-height: 36px;
+  }
+  .menu-toggle {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+    letter-spacing: 0.5px;
+  }
+}
+
+/* --- KRITIS: Navbar very small (di bawah 400px) --- */
+@media (max-width: 400px) {
+  .navbar-container {
+    padding: 8px 10px;
+  }
+  .nav-brand img {
+    height: 30px;
+    max-height: 30px;
   }
   .menu-toggle {
     font-size: 0.65rem;
     padding: 5px 10px;
+    letter-spacing: 0;
   }
 }
 
