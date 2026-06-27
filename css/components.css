@@ -108,14 +108,10 @@ header.scrolled {
 .nav-brand {
   display: flex;
   align-items: center;
-  flex: 1 1 auto;        /* tumbuh tapi bisa menyusut */
-  min-width: 0;          /* izinkan shrink di flex container */
-  overflow: hidden;
 }
 
 .nav-brand img {
   max-height: 40px;
-  max-width: 100%;
   width: auto;
   height: auto;
   object-fit: contain;

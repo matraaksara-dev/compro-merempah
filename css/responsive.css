@@ -168,6 +168,108 @@
 /* --- PENTING 2.4: Hero padding mobile --- */
 @media (max-width: 767px) {
   .hero-section {
+
+/* ============================================================
+   MEREMPAH — MOBILE RESPONSIVE PATCH v2.0
+   Tambahkan blok ini di akhir responsive.css
+   Tidak mengubah tema, konten, atau animasi yang ada
+   ============================================================ */
+
+/* --- KRITIS 1.1: Hero logo overflow --- */
+.hero-text-container img[alt="Merempah Logo"] {
+  width: min(280px, 75vw) !important;
+  max-width: 100%;
+}
+
+/* --- KRITIS 1.2: Parallax iOS fix --- */
+@media (max-width: 767px) {
+  .bar-showcase-bg {
+    background-attachment: scroll !important;
+    background-position: center center;
+  }
+}
+
+/* --- KRITIS 1.3: Table touch scroll --- */
+.table-wrapper {
+  -webkit-overflow-scrolling: touch;
+}
+@media (max-width: 767px) {
+  .table-modern {
+    font-size: 0.8rem;
+  }
+  .table-modern th,
+  .table-modern td {
+    padding: 8px 10px;
+    min-width: 100px;
+  }
+}
+
+/* --- KRITIS 1.4: Hero gradient portrait mobile --- */
+@media (max-width: 767px) {
+  .hero-bg-glow {
+    background: linear-gradient(
+      to bottom,
+      rgba(15, 20, 15, 0.92) 0%,
+      rgba(15, 20, 15, 0.80) 50%,
+      rgba(15, 20, 15, 0.88) 100%
+    ) !important;
+    animation: none;
+  }
+}
+
+/* --- KRITIS 1.5: Letter-spacing overflow fix --- */
+@media (max-width: 767px) {
+  .hero-title {
+    letter-spacing: 2px !important;
+  }
+  .hero-pretitle {
+    letter-spacing: 2px !important;
+  }
+  .section-title {
+    letter-spacing: 1px;
+  }
+}
+
+/* --- PENTING 2.1: Footer grid mobile --- */
+@media (max-width: 767px) {
+  footer .grid-3 {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-xl);
+  }
+  footer .grid-3 > div:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: var(--space-xl);
+  }
+}
+
+/* --- PENTING 2.2: Timeline linear mobile --- */
+@media (max-width: 767px) {
+  .timeline::after {
+    left: 20px;
+    transform: none;
+  }
+  .timeline-item,
+  .timeline-item:nth-child(even) {
+    width: 100%;
+    left: 0;
+    padding-left: 52px;
+    padding-right: 0;
+    text-align: left;
+  }
+  .timeline-item::after,
+  .timeline-item:nth-child(even)::after {
+    left: 12px;
+    right: auto;
+    top: 20px;
+  }
+  .timeline-item:nth-child(odd) {
+    text-align: left;
+  }
+}
+
+/* --- PENTING 2.4: Hero padding mobile --- */
+@media (max-width: 767px) {
+  .hero-section {
     padding-top: 80px !important;
     min-height: 100svh;
     min-height: -webkit-fill-available; /* fallback iOS lama */
@@ -188,36 +290,22 @@
   }
 }
 
-/* --- PENTING 2.6: Navbar mobile — Semua ukuran layar di bawah 768px --- */
+/* --- PENTING 2.6: Navbar mobile --- */
 @media (max-width: 767px) {
   .navbar-container {
-    padding: 10px var(--space-sm);
-    gap: 8px;
+    padding: 10px 15px; /* Rapat, maksimal ruang untuk konten */
+  }
+  .nav-brand {
+    max-width: 65%; /* Paksa logo mengalah dari tombol */
   }
   .nav-brand img {
-    height: 36px;
+    height: auto;
     max-height: 36px;
   }
   .menu-toggle {
-    font-size: 0.7rem;
-    padding: 5px 12px;
+    font-size: 0.75rem;
+    padding: 6px 14px;
     letter-spacing: 0.5px;
-  }
-}
-
-/* --- KRITIS: Navbar very small (di bawah 400px) --- */
-@media (max-width: 400px) {
-  .navbar-container {
-    padding: 8px 10px;
-  }
-  .nav-brand img {
-    height: 30px;
-    max-height: 30px;
-  }
-  .menu-toggle {
-    font-size: 0.65rem;
-    padding: 5px 10px;
-    letter-spacing: 0;
   }
 }
 
