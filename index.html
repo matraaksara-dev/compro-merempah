@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Company Profile Resmi Merempah - Warisan Aksioma Nusantara. Kafe modern berbasis kopi pilihan berkualitas tinggi dan biang rempah segar premium di Malang.">
+  <meta name="keywords" content="Merempah, Kafe Malang, Kopi Roastery Malang, Jamu Modern, STMJ Premium, WFC Malang, Kuliner Malang">
+  <meta name="author" content="PT Seduhlur Indo Group">
+  <title>MEREMPAH — Warisan Aksioma Nusantara</title>
+  
+  <link rel="icon" type="image/png" href="assets/images/logo-icon.png">
+  <link rel="canonical" href="http://www.merempah.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MEREMPAH — Warisan Aksioma Nusantara">
+  <meta property="og:description" content="Kafe modern berbasis kopi pilihan berkualitas tinggi dan biang rempah segar premium di Malang.">
+  <meta property="og:image" content="assets/images/logo-full.png">
+  <meta property="og:url" content="http://www.merempah.com/">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/charts.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    /* ========================
+       HERO SECTION — Enhanced
+       ======================== */
+    .hero-section {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding-top: 110px;
+      overflow: hidden;
+    }
+
+    /* Hero background image layer */
+    .hero-bg-image {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/images/hero-bg.png');
+      background-size: cover;
+      background-position: center 40%;
+      opacity: 0.55;
+      z-index: 0;
+    }
+
+    /* Gradient overlay for text legibility over dark hero image */
+    .hero-bg-glow {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(to right, rgba(15,20,15,0.95) 0%, rgba(15,20,15,0.75) 50%, rgba(15,20,15,0.2) 100%),
+        radial-gradient(ellipse 60% 50% at 85% 15%, rgba(201,169,110,0.15) 0%, transparent 65%);
+      animation: heroGlowPulse 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroGlowPulse {
+      0%   { opacity: 0.7; }
+      50%  { opacity: 1; }
+      100% { opacity: 0.75; }
+    }
+
+    /* Floating animated spice particles in hero */
+    .hero-particle {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1;
+      animation: particleFloat linear infinite;
+      opacity: 0;
+    }
+
+    .hero-particle:nth-child(1) { width: 6px; height: 6px; background: rgba(201,169,110,0.5); left: 15%; top: 20%; animation-duration: 12s; animation-delay: 0s; }
+    .hero-particle:nth-child(2) { width: 4px; height: 4px; background: rgba(43,61,41,0.3); left: 70%; top: 60%; animation-duration: 15s; animation-delay: 3s; }
+    .hero-particle:nth-child(3) { width: 8px; height: 8px; background: rgba(201,169,110,0.3); left: 45%; top: 80%; animation-duration: 10s; animation-delay: 1.5s; }
+    .hero-particle:nth-child(4) { width: 3px; height: 3px; background: rgba(43,61,41,0.4); left: 85%; top: 30%; animation-duration: 18s; animation-delay: 5s; }
+    .hero-particle:nth-child(5) { width: 5px; height: 5px; background: rgba(201,169,110,0.4); left: 25%; top: 70%; animation-duration: 13s; animation-delay: 2s; }
+
+    @keyframes particleFloat {
+      0%   { transform: translateY(30px) scale(0); opacity: 0; }
+      10%  { opacity: 1; }
+      90%  { opacity: 0.7; }
+      100% { transform: translateY(-80px) scale(1.2); opacity: 0; }
+    }
+
+    /* Content sits above bg layers */
+    .hero-section .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-text-container {
+      max-width: 760px;
+    }
+
+    .hero-pretitle {
+      font-family: var(--font-body);
+      font-weight: 700;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-bottom: var(--space-sm);
+      display: block;
+      font-size: 0.85rem;
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      color: var(--color-primary);
+      margin-bottom: var(--space-sm);
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .hero-divider {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+      margin: var(--space-md) 0;
+      border-radius: 2px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      color: rgba(255,255,255,0.85);
+      font-weight: 400;
+      margin-bottom: var(--space-xl);
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    /* ========================
+       BAR SPICE SHOWCASE SECTION
+       ======================== */
+    .bar-showcase-section {
+      position: relative;
+      min-height: 500px;
+      overflow: hidden;
+    }
+
+    .bar-showcase-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/images/bar-spice.png');
+      background-size: cover;
+      background-position: center 30%;
+      background-attachment: fixed;
+      filter: brightness(0.55) saturate(1.1);
+      z-index: 0;
+    }
+
+    /* Stainless steel sheen animated overlay */
+    .bar-showcase-sheen {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        120deg,
+        rgba(0,0,0,0.6) 0%,
+        rgba(10,10,10,0.3) 40%,
+        rgba(201,169,110,0.12) 55%,
+        rgba(10,10,10,0.3) 70%,
+        rgba(0,0,0,0.65) 100%
+      );
+      background-size: 300% 100%;
+      animation: sheenSlide 6s ease-in-out infinite alternate;
+      z-index: 1;
+    }
+
+    @keyframes sheenSlide {
+      0%   { background-position: 0% 0%; }
+      100% { background-position: 100% 0%; }
+    }
+
+    /* Warm neon amber glow at bottom — simulates bar light */
+    .bar-neon-glow {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: linear-gradient(to top, rgba(201,120,20,0.25), transparent);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .bar-neon-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(201,169,110,0.6), transparent);
+      z-index: 3;
+      animation: neonLinePulse 3s ease-in-out infinite;
+    }
+
+    @keyframes neonLinePulse {
+      0%, 100% { opacity: 0.4; }
+      50%       { opacity: 1; box-shadow: 0 0 12px rgba(201,169,110,0.8); }
+    }
+
+    .bar-content {
+      position: relative;
+      z-index: 4;
+      padding: 100px 0;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .bar-content .bar-label {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--color-accent);
+      display: block;
+      margin-bottom: var(--space-md);
+    }
+
+    .bar-content h2 {
+      font-family: var(--font-headline);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: var(--space-lg);
+      text-shadow: 0 2px 20px rgba(0,0,0,0.7);
+    }
+
+    .bar-content p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.82);
+      max-width: 640px;
+      margin: 0 auto var(--space-xl) auto;
+      line-height: 1.8;
+    }
+
+    .bar-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      justify-content: center;
+    }
+
+    .bar-tag {
+      padding: 6px 16px;
+      background-color: rgba(201,169,110,0.18);
+      border: 1px solid rgba(201,169,110,0.5);
+      border-radius: var(--radius-full);
+      color: var(--color-accent);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      backdrop-filter: blur(6px);
+      transition: all var(--transition-normal);
+    }
+
+    .bar-tag:hover {
+      background-color: rgba(201,169,110,0.35);
+      transform: translateY(-2px);
+    }
+
+    /* ========================
+       IDENTITY & LAYOUT EXTRAS
+       ======================== */
+    .archetype-bar {
+      height: 10px;
+      display: flex;
+      width: 100%;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+
+    .archetype-bar-sage {
+      background-color: var(--color-primary);
+      height: 100%;
+    }
+
+    .archetype-bar-everyman {
+      background-color: var(--color-accent);
+      height: 100%;
+    }
+
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-md);
+    }
+
+    .swatch {
+      padding: var(--space-md);
+      border-radius: var(--radius-md);
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border: 1px solid var(--color-border);
+      cursor: pointer;
+      transition: transform var(--transition-fast);
+    }
+
+    .swatch:hover { transform: scale(1.03); }
+    .swatch-primary { background-color: var(--color-primary); color: var(--color-bg-light); }
+    .swatch-accent  { background-color: var(--color-accent);  color: var(--color-primary); }
+    .swatch-dark    { background-color: var(--color-text-dark); color: var(--color-bg-light); }
+    .swatch-light   { background-color: var(--color-bg-soft);  color: var(--color-text-dark); }
+
+    .engine-box {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      background-color: var(--color-bg-light);
+      position: relative;
+    }
+
+    .engine-badge {
+      position: absolute;
+      top: -12px;
+      left: var(--space-xl);
+    }
+
+    .product-showcase {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+    }
+
+    .product-card {
+      background-color: var(--color-bg-light);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      padding: var(--space-xl);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-accent-line {
+      height: 4px;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .product-card.telang .product-accent-line {
+      background: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899);
+    }
+
+    .product-card.wangi .product-accent-line {
+      background-color: var(--color-accent);
+    }
+
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: var(--space-lg);
+      position: relative;
+    }
+
+    .journey-step {
+      background-color: var(--color-bg-light);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      padding: var(--space-lg);
+      position: relative;
+      transition: all var(--transition-normal);
+    }
+
+    .journey-step:hover {
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-md);
+    }
+
+    .step-number {
+      font-size: 2.5rem;
+      font-family: var(--font-headline);
+      color: rgba(43, 61, 41, 0.1);
+      position: absolute;
+      top: var(--space-sm);
+      right: var(--space-md);
+      font-weight: 700;
+    }
+
+    @media (min-width: 768px) {
+      .product-showcase   { grid-template-columns: repeat(2, 1fr); }
+      .journey-grid       { grid-template-columns: repeat(4, 1fr); }
+      .palette-grid       { grid-template-columns: repeat(4, 1fr); }
+    }
+  </style>
+
+  <!-- LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "name": "MEREMPAH",
+    "image": "assets/images/logo-full.png",
+    "@id": "http://www.merempah.com/#foodestablishment",
+    "url": "http://www.merempah.com/",
+    "priceRange": "$$",
+    "sameAs": ["https://www.instagram.com/merempah.idn"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jln. Candi Trowulan Ruko Square No. 17",
+      "addressLocality": "Kota Malang",
+      "addressRegion": "Jawa Timur",
+      "addressCountry": "ID"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -7.983908,
+      "longitude": 112.621391
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "09:00",
+      "closes": "23:00"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- ===== HEADER / NAVIGATION ===== -->
+  <header>
+    <div class="navbar-container">
+      <a href="#home" class="nav-brand">
+        <img src="assets/images/logo-full.png" alt="Merempah — Warisan Aksioma Nusantara">
+      </a>
+      
+      <nav class="nav-links">
+        <a href="#about"          class="nav-link">Tentang</a>
+        <a href="#usp"            class="nav-link">USP</a>
+        <a href="#pricing"        class="nav-link">Pricing</a>
+        <a href="#products"       class="nav-link">Menu Hero</a>
+        <a href="#personas"       class="nav-link">Target Market</a>
+        <a href="#research"       class="nav-link">Riset</a>
+        <a href="#campaign"       class="nav-link">Kampanye</a>
+        <a href="#faq"            class="nav-link">FAQ</a>
+      </nav>
+
+      <div class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+        JELAJAHI
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about"    class="nav-link">Tentang</a>
+    <a href="#usp"      class="nav-link">USP</a>
+    <a href="#pricing"  class="nav-link">Pricing</a>
+    <a href="#products" class="nav-link">Menu Hero</a>
+    <a href="#personas" class="nav-link">Target Market</a>
+    <a href="#research" class="nav-link">Riset</a>
+    <a href="#campaign" class="nav-link">Kampanye</a>
+    <a href="#faq"      class="nav-link">FAQ</a>
+  </div>
+
+  <main>
+
+    <!-- ===== SECTION 1: HERO ===== -->
+    <section class="section hero-section" id="home">
+      <!-- Background layers -->
+      <div class="hero-bg-image" aria-hidden="true"></div>
+      <div class="hero-bg-glow"  aria-hidden="true"></div>
+
+      <!-- Floating particles -->
+      <div class="hero-particle" aria-hidden="true"></div>
+      <div class="hero-particle" aria-hidden="true"></div>
+      <div class="hero-particle" aria-hidden="true"></div>
+      <div class="hero-particle" aria-hidden="true"></div>
+      <div class="hero-particle" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero-text-container" data-aos="fade-up" data-aos-duration="1000" style="display:flex; flex-direction:column; align-items:flex-start;">
+          <img src="assets/images/logo-full.png" alt="Merempah Logo" style="max-width: 100%; width: 340px; margin-bottom: var(--space-md); filter: brightness(0) invert(1) drop-shadow(0px 4px 12px rgba(0,0,0,0.6));">
+          <h1 style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0);">MEREMPAH - Warisan Aksioma Nusantara</h1>
+          <div class="hero-divider"></div>
+          <p class="hero-subtitle">Ruang di mana sejarah menemukan rasanya. Kopi pilihan dari sangrai terbaik berpadu dengan keaslian artisan jamu segar nusantara di pusat Kota Malang.</p>
+          <div class="flex gap-md" style="flex-wrap:wrap;">
+            <a href="#about" class="btn btn--accent">Mulai Penjelajahan</a>
+            <a href="#faq"   class="btn btn--outline-light">Tanya Jawab (FAQ)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 2: BRAND IDENTITY ===== -->
+    <section class="section section--soft-bg" id="brand-identity">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-subtitle">Matriks Identitas</span>
+          <h2 class="section-title">Brand Identity System</h2>
+        </div>
+
+        <div class="grid grid-2">
+          <!-- Archetype Card -->
+          <div class="card" data-aos="fade-right">
+            <h3 class="card-title">Brand Archetype</h3>
+            <p>Representasi kepribadian dan cara berkomunikasi brand Merempah kepada pelanggan.</p>
+            <div class="my-md">
+              <div class="flex-between my-sm">
+                <span class="badge badge--dark">The Modern Sage (70%)</span>
+                <span class="badge badge--accent">The Everyman (30%)</span>
+              </div>
+              <div class="archetype-bar">
+                <div class="archetype-bar-sage"     style="width:70%;"></div>
+                <div class="archetype-bar-everyman" style="width:30%;"></div>
+              </div>
+            </div>
+            <p class="card-desc" style="font-size:0.9rem;">
+              <strong>Sage (70%):</strong> Edukatif, puitis, dan membumi dalam komunikasi digital.<br>
+              <strong>Everyman (30%):</strong> Casual, solutif, cepat, dan akrab layaknya sahabat terbaik (in-store).
+            </p>
+          </div>
+
+          <!-- Color Swatch Card -->
+          <div class="card" data-aos="fade-left">
+            <h3 class="card-title">Palette Warna &amp; Tipografi</h3>
+            <p>Paduan warna HSL terkurasi yang membedakan identitas Merempah dari kafe komersial biasa.</p>
+            <div class="palette-grid my-md">
+              <div class="swatch swatch-primary swatch-color" data-hex="#2b3d29">#2b3d29<br><span style="font-size:0.65rem;">Deep Green</span></div>
+              <div class="swatch swatch-accent  swatch-color" data-hex="#c9a96e">#c9a96e<br><span style="font-size:0.65rem;">Muted Gold</span></div>
+              <div class="swatch swatch-dark    swatch-color" data-hex="#000000">#000000<br><span style="font-size:0.65rem;">Ind. Black</span></div>
+              <div class="swatch swatch-light   swatch-color" data-hex="#FFFFFF">#FFFFFF<br><span style="font-size:0.65rem;">Pure White</span></div>
+            </div>
+            <p class="card-desc" style="font-size:0.9rem;">
+              <strong>Headline Font:</strong> COPPERPLATE GOTHIC / CINZEL<br>
+              <strong>Body Font:</strong> MONTSERRAT / INTER
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 3: ORIGIN STORY ===== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-subtitle">Latar Belakang</span>
+          <h2 class="section-title">The Origin Story</h2>
+        </div>
+
+        <div class="grid grid-2 align-center">
+          <div data-aos="fade-right">
+            <h3 class="my-sm" style="font-size:1.5rem;">Celah Nyata yang Terlewatkan</h3>
+            <p>Merempah lahir dari kegelisahan mendalam: <em>Mengapa warisan rempah Nusantara yang telah terbukti selama berabad-abad justru asing di kalangan generasinya sendiri?</em></p>
+            <p>Jahe merah, kunyit, temulawak, dan serai sudah menghangatkan perut para leluhur jauh sebelum espresso atau soda masuk ke tanah Jawa. Kami menyadari adanya celah nyata yang belum diisi: kaum urban produktif menginginkan tempat nongkrong (WFC) yang nyaman, tetapi dengan menu minuman yang tidak membebani tubuh.</p>
+            <p>Transformasi dari <strong>Seduhlur</strong> menjadi <strong>Merempah</strong> merupakan ekspansi nilai (value expansion) — menggabungkan standar kualitas kopi terkurasi dan basis pelanggan loyal dengan kedalaman warisan herbal lokal.</p>
+          </div>
+          <div data-aos="fade-left">
+            <div class="brand-quote" style="margin:0;">
+              "Merempah ada karena leluhur kita sudah meninggalkan jawaban. Kami hanya menyajikannya dalam gelas yang lebih indah."
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 4: BAR SPICE SHOWCASE (DARK CINEMATIC) ===== -->
+    <section class="bar-showcase-section" id="bar-showcase">
+      <div class="bar-showcase-bg" aria-hidden="true"></div>
+      <div class="bar-showcase-sheen" aria-hidden="true"></div>
+      <div class="bar-neon-glow"  aria-hidden="true"></div>
+      <div class="bar-neon-top"   aria-hidden="true"></div>
+
+      <div class="bar-content container">
+        <span class="bar-label" data-aos="fade-up">Artisan Apothecary × Serious Roastery</span>
+        <h2 data-aos="fade-up" data-aos-delay="80">Diseleksi Ketat. Disajikan Segar. Setiap Hari.</h2>
+        <p data-aos="fade-up" data-aos-delay="160">
+          Setiap pagi, biang rempah direbus segar dari bahan-bahan organik pilihan yang diseleksi langsung oleh tim Merempah. Biji kopi dikurasi dari mitra sangrai spesialis terpercaya kami — batch kecil, selalu segar. Tidak ada serbuk instan. Tidak ada gimmick.
+        </p>
+        <div class="bar-tags" data-aos="fade-up" data-aos-delay="240">
+          <span class="bar-tag">Jahe Merah</span>
+          <span class="bar-tag">Kunyit Segar</span>
+          <span class="bar-tag">Serai</span>
+          <span class="bar-tag">Kembang Telang</span>
+          <span class="bar-tag">Kayu Manis</span>
+          <span class="bar-tag">Kapulaga</span>
+          <span class="bar-tag">Kopi Batch Kecil</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 5: USP — DOUBLE ENGINE ===== -->
+    <section class="section section--soft-bg" id="usp">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-subtitle">Keunggulan Utama</span>
+          <h2 class="section-title">The Double Engine USP</h2>
+        </div>
+
+        <div class="grid grid-2 my-lg">
+          <div class="engine-box" data-aos="fade-right">
+            <span class="badge badge--dark engine-badge">Mesin 1</span>
+            <div class="card-icon" style="margin-top:10px;"><i data-lucide="flame"></i></div>
+            <h3 class="card-title my-sm">Serious Roastery</h3>
+            <p>Merempah bermitra secara eksklusif dengan roastery spesialis pilihan — memastikan setiap biji kopi yang disajikan adalah hasil sangrai segar dalam batch kecil, dikurasi khusus untuk profil rasa Merempah. Kualitas diseleksi ketat sebelum masuk ke gerai.</p>
+          </div>
+
+          <div class="engine-box" data-aos="fade-left">
+            <span class="badge badge--accent engine-badge">Mesin 2</span>
+            <div class="card-icon" style="margin-top:10px;background-color:rgba(201,169,110,0.1);color:var(--color-accent);"><i data-lucide="flask-conical"></i></div>
+            <h3 class="card-title my-sm">Artisan Apothecary</h3>
+            <p>Base Rempah kami direbus segar setiap pagi dari pemasok rempah segar terpercaya pilihan kami. Kami tidak menggunakan serbuk kemasan instant atau perasa buatan — semua jahe, kunyit, dan serai adalah bahan organik mentah segar yang diseleksi langsung oleh tim Merempah.</p>
+          </div>
+        </div>
+
+        <!-- Competitor Comparison Table -->
+        <div class="table-wrapper my-xl" data-aos="fade-up">
+          <table class="table-modern">
+            <thead>
+              <tr>
+                <th>Fitur &amp; Layanan</th>
+                <th style="background-color:rgba(43,61,41,0.05);text-align:center;">MEREMPAH</th>
+                <th style="text-align:center;">Kafe Rempah / Jamu Modern</th>
+                <th style="text-align:center;">Warung STMJ Tradisional</th>
+                <th style="text-align:center;">Jaringan Kopi Komersial (Coffee Chain)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Kopi Sangrai Segar (Batch Kecil)</strong></td>
+                <td style="background-color:rgba(43,61,41,0.03);text-align:center;color:var(--color-primary);"><i data-lucide="check" style="margin:0 auto;"></i></td>
+                <td style="text-align:center;color:#ef4444;"><i data-lucide="x" style="margin:0 auto;"></i></td>
+                <td style="text-align:center;color:#ef4444;"><i data-lucide="x" style="margin:0 auto;"></i></td>
+                <td style="text-align:center;color:#ef4444;"><i data-lucide="x" style="margin:0 auto;"></i></td>
+              </tr>
+              <tr>
+                <td><strong>Bahan Rempah Segar</strong></td>
+                <td style="background-color:rgba(43,61,41,0.03);text-align:center;color:var(--color-primary);"><i data-lucide="check" style="margin:0 auto;"></i></td>
+                <td style="text-align:center;color:var(--color-primary);"><i data-lucide="check" style="margin:0 auto;"></i></td>
+                <td style="text-align:center;color:var(--color-primary);"><i data-lucide="check" style="margin:0 auto;"></i></td>
+                <td style="text-align:center;color:#ef4444;"><i data-lucide="x" style="margin:0 auto;"></i></td>
+              </tr>
+              <tr>
+                <td><strong>Fasilitas Produktivitas (WFC)</strong></td>
+                <td style="background-color:rgba(43,61,41,0.03);text-align:center;color:var(--color-primary);"><i data-lucide="check" style="margin:0 auto;"></i></td>
+                <td style="text-align:center;color:var(--color-primary);"><i data-lucide="check" style="margin:0 auto;"></i></td>
+                <td style="text-align:center;color:#ef4444;"><i data-lucide="x" style="margin:0 auto;"></i></td>
+                <td style="text-align:center;color:var(--color-primary);"><i data-lucide="check" style="margin:0 auto;"></i></td>
+              </tr>
+              <tr>
+                <td><strong>Konsep Wellness Alami</strong></td>
+                <td style="background-color:rgba(43,61,41,0.03);text-align:center;color:var(--color-primary);"><i data-lucide="check" style="margin:0 auto;"></i></td>
+                <td style="text-align:center;color:#ef4444;"><i data-lucide="x" style="margin:0 auto;"></i></td>
+                <td style="text-align:center;color:var(--color-primary);"><i data-lucide="check" style="margin:0 auto;"></i></td>
+                <td style="text-align:center;color:#ef4444;"><i data-lucide="x" style="margin:0 auto;"></i></td>
+              </tr>
+              <tr>
+                <td><strong>Suasana Modern / WFC Ready</strong></td>
+                <td style="background-color:rgba(43,61,41,0.03);text-align:center;color:var(--color-primary);"><i data-lucide="check" style="margin:0 auto;"></i></td>
+                <td style="text-align:center;color:var(--color-primary);"><i data-lucide="check" style="margin:0 auto;"></i></td>
+                <td style="text-align:center;color:#ef4444;"><i data-lucide="x" style="margin:0 auto;"></i></td>
+                <td style="text-align:center;color:var(--color-primary);"><i data-lucide="check" style="margin:0 auto;"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 6: PRICING ===== -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-subtitle">Koreksi Strategi</span>
+          <h2 class="section-title">Pricing &amp; AOV Realistis</h2>
+        </div>
+
+        <div class="grid grid-3 my-lg">
+          <!-- Tier 1 — UPDATED RANGE -->
+          <div class="card hover-lift" data-aos="fade-up" data-aos-delay="50">
+            <span class="badge badge--tier1">Tier 1</span>
+            <h3 class="card-title my-sm" style="font-size:1.15rem;">Traffic Magnet</h3>
+            <p style="font-weight:700;font-size:1.25rem;color:var(--color-primary);" class="my-sm">Rp 7.000 – Rp 10.000</p>
+            <p class="card-desc">Contoh: Es Teh, Kopi Tubruk Seduhlur, dan minuman dasar segar harian.</p>
+            <p style="font-size:0.85rem;border-top:1px solid var(--color-border);padding-top:var(--space-sm);margin-top:var(--space-md);">Fungsi: Mengikis hambatan masuk untuk pelanggan baru yang sensitif harga. Pintu pertama menuju pengalaman Merempah.</p>
+          </div>
+
+          <!-- Tier 2 -->
+          <div class="card hover-lift" style="border:2px solid var(--color-primary);" data-aos="fade-up" data-aos-delay="100">
+            <span class="badge badge--tier2">Tier 2</span>
+            <h3 class="card-title my-sm" style="font-size:1.15rem;">Sweet Spot</h3>
+            <p style="font-weight:700;font-size:1.25rem;color:var(--color-primary);" class="my-sm">Rp 12.000 – Rp 18.000</p>
+            <p class="card-desc">Contoh: Rempah Wangi, Telang Langit, Bandrek Butter Scotch, Cafe Latte Verde.</p>
+            <p style="font-size:0.85rem;border-top:1px solid var(--color-border);padding-top:var(--space-sm);margin-top:var(--space-md);font-weight:600;">Fungsi: Volume driver utama harian. Titik manis antara nilai dan keterjangkauan — inti dari pengalaman Merempah.</p>
+          </div>
+
+          <!-- Tier 3 -->
+          <div class="card hover-lift" data-aos="fade-up" data-aos-delay="150">
+            <span class="badge badge--tier3">Tier 3</span>
+            <h3 class="card-title my-sm" style="font-size:1.15rem;">Value Builder</h3>
+            <p style="font-weight:700;font-size:1.25rem;color:var(--color-primary);" class="my-sm">Rp 18.000 – Rp 30.000</p>
+            <p class="card-desc">Contoh: STMJ Raja Malam, Targeted Wellness Series (Goldmilk, Kencur Creamy Latte), Bir Jawa Non-Alcohol.</p>
+            <p style="font-size:0.85rem;border-top:1px solid var(--color-border);padding-top:var(--space-sm);margin-top:var(--space-md);">Fungsi: Menjangkau pelanggan loyal dengan kebutuhan premium dan nilai kesehatan tertinggi.</p>
+          </div>
+        </div>
+
+        <div class="card" style="background-color:var(--color-bg-soft);border-left:4px solid var(--color-primary);" data-aos="fade-up">
+          <h3 class="card-title" style="font-size:1.1rem;display:flex;align-items:center;gap:var(--space-sm);">
+            <i data-lucide="info" style="color:var(--color-accent);"></i> Filosofi Pricing: Affordable Luxury
+          </h3>
+          <p class="my-sm">Struktur tiga tier dirancang agar setiap segmen pelanggan menemukan titik masuknya masing-masing — dari yang pertama kali mencoba hingga pelanggan loyal. Kombinasi pembelian tipikal mendukung AOV yang sehat, memperkuat posisi <strong>"Affordable Luxury"</strong> tanpa mengorbankan margin kualitas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 7: CORE PRODUCTS ===== -->
+    <section class="section section--soft-bg" id="products">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-subtitle">Produk Unggulan</span>
+          <h2 class="section-title">Core Products</h2>
+        </div>
+
+        <div class="product-showcase">
+          <!-- Product 1: Rempah Wangi — NO PRICE DISPLAYED -->
+          <div class="product-card wangi" data-aos="fade-right">
+            <div class="product-accent-line"></div>
+            <h3 class="card-title" style="font-size:1.4rem;font-family:var(--font-headline);margin-top:10px;">REMPAH WANGI</h3>
+            <span class="badge badge--accent my-xs">Core Product 1 — Rasa &amp; Aroma</span>
+            <p class="my-md">Racikan rahasia rempah-rempah aromatik Nusantara hangat yang disajikan secara modern. Keseimbangan rasa manis, pedas hangat, dan aroma herbal yang menyenangkan.</p>
+            <div style="background-color:var(--color-bg-soft);padding:var(--space-md);border-radius:var(--radius-md);font-size:0.9rem;" class="my-sm">
+              <strong>Pesan Filosofis:</strong> "Membuktikan bahwa rempah bisa disajikan secara menyenangkan, sekaligus meruntuhkan stigma pahit atau berbau obat."
+            </div>
+          </div>
+
+          <!-- Product 2: Telang Langit — NO PRICE DISPLAYED -->
+          <div class="product-card telang telang-effect" data-aos="fade-left">
+            <div class="product-accent-line"></div>
+            <h3 class="card-title" style="font-size:1.4rem;font-family:var(--font-headline);margin-top:10px;position:relative;z-index:1;">REMPAH TELANG LANGIT</h3>
+            <span class="badge badge--accent my-xs" style="position:relative;z-index:1;">Core Product 2 — Visual Magic</span>
+            <p class="my-md" style="position:relative;z-index:1;">Minuman berbasis seduhan kembang telang biru alami dipadu dengan serai. Menampilkan warna biru langit dramatis yang berubah warna menjadi ungu secara natural ketika ditetesi perasan jeruk nipis segar.</p>
+            <div style="background-color:rgba(255,255,255,0.85);backdrop-filter:blur(4px);padding:var(--space-md);border-radius:var(--radius-md);font-size:0.9rem;position:relative;z-index:1;" class="my-sm">
+              <strong>Pesan Filosofis:</strong> "Aksioma visual dalam gelas. Menghadirkan konten media sosial yang tercipta secara mandiri oleh pelanggan lewat keajaiban kimia alamiah."
+            </div>
+          </div>
+        </div>
+
+        <!-- Supporting Products — NO PRICES -->
+        <div class="grid grid-2 my-xl" data-aos="fade-up">
+          <div class="card flex" style="flex-direction:row;gap:var(--space-md);align-items:center;">
+            <div class="card-icon" style="flex-shrink:0;margin-bottom:0;"><i data-lucide="coffee"></i></div>
+            <div>
+              <h4 style="font-weight:700;font-size:1rem;color:var(--color-primary);">Cafe Latte Verde</h4>
+              <p style="font-size:0.85rem;margin-bottom:0;">Latte fusion modern berpenampilan cantik dengan paduan kopi pilihan sangrai segar berkualitas tinggi.</p>
+            </div>
+          </div>
+
+          <div class="card flex" style="flex-direction:row;gap:var(--space-md);align-items:center;">
+            <div class="card-icon" style="flex-shrink:0;margin-bottom:0;background-color:rgba(201,169,110,0.1);color:var(--color-accent);"><i data-lucide="flame"></i></div>
+            <div>
+              <h4 style="font-weight:700;font-size:1rem;color:var(--color-primary);">Bandrek Butter Scotch</h4>
+              <p style="font-size:0.85rem;margin-bottom:0;">Reinterpretasi bandrek klasik nusantara dengan kelembutan manisnya saus butterscotch modern.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 8: TARGET AUDIENCE ===== -->
+    <section class="section" id="personas">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-subtitle">Target Konsumen</span>
+          <h2 class="section-title">Customer Persona</h2>
+        </div>
+
+        <div class="grid grid-2">
+          <!-- Persona A -->
+          <div class="card hover-lift" data-aos="fade-right">
+            <div class="flex-between">
+              <span class="badge badge--primary">Target Primer</span>
+              <span class="badge badge--accent">Usia 20–28 Tahun</span>
+            </div>
+            <h3 class="card-title my-sm" style="font-size:1.3rem;">"The Urban Ritualist"</h3>
+            <p><strong>Profil:</strong> Mahasiswa tingkat akhir, fresh graduate, freelancer, dan pekerja remote di Kota Malang.</p>
+            <p class="card-desc">
+              <strong>Keseharian:</strong> Sering berpindah tempat untuk WFC (Work From Cafe). Mengutamakan kafe dengan koneksi internet cepat, meja luas, colokan listrik memadai, dan suasana kondusif.<br><br>
+              <strong>Perilaku Belanja:</strong> Ingin produk yang memiliki nilai estetika (Instagramable) namun tetap aman bagi kesehatan tubuh jangka panjang.
+            </p>
+            <div style="border-top:1px solid var(--color-border);padding-top:var(--space-sm);font-size:0.85rem;" class="my-sm">
+              <strong>Menu Favorit:</strong> Rempah Wangi, Telang Langit, Cafe Latte Verde.
+            </div>
+          </div>
+
+          <!-- Persona B -->
+          <div class="card hover-lift" data-aos="fade-left">
+            <div class="flex-between">
+              <span class="badge badge--dark">Target Sekunder</span>
+              <span class="badge badge--accent">Usia 30–45 Tahun</span>
+            </div>
+            <h3 class="card-title my-sm" style="font-size:1.3rem;">"The Settled Professional"</h3>
+            <p><strong>Profil:</strong> Pengusaha lokal, akademisi, manajer, eksekutif muda, dan profesional kantoran.</p>
+            <p class="card-desc">
+              <strong>Keseharian:</strong> Membutuhkan lokasi rapat informal, ruang negosiasi, atau tempat rileks sejenak setelah jam kerja yang sibuk.<br><br>
+              <strong>Perilaku Belanja:</strong> Memiliki daya beli lebih tinggi, mengedepankan efisiensi layanan, konsistensi rasa produk, dan suasana berkelas tanpa terkesan berlebihan.
+            </p>
+            <div style="border-top:1px solid var(--color-border);padding-top:var(--space-sm);font-size:0.85rem;" class="my-sm">
+              <strong>Menu Favorit:</strong> Kopi Tubruk Seduhlur, STMJ Raja Malam, STMJ Heritage.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 9: EMOTIONAL JOURNEY ===== -->
+    <section class="section section--soft-bg" id="journey">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-subtitle">Pengalaman Pelanggan</span>
+          <h2 class="section-title">The Emotional Journey</h2>
+        </div>
+
+        <div class="journey-grid">
+          <div class="journey-step" data-aos="fade-up" data-aos-delay="50">
+            <span class="step-number">01</span>
+            <h3 style="font-size:1.1rem;color:var(--color-primary);" class="my-sm">Saat Masuk</h3>
+            <p style="font-size:0.9rem;">Disambut oleh perpaduan wangi kopi sangrai segar dan uap air rebusan jahe aromatik harian. Memberikan impresi kesegaran alami.</p>
+          </div>
+          <div class="journey-step" data-aos="fade-up" data-aos-delay="100">
+            <span class="step-number">02</span>
+            <h3 style="font-size:1.1rem;color:var(--color-primary);" class="my-sm">Saat Memesan</h3>
+            <p style="font-size:0.9rem;">Interaksi hangat dengan barista ramah. Pelanggan diajak berdiskusi tentang manfaat dan cita rasa unik ramuan herbal.</p>
+          </div>
+          <div class="journey-step" data-aos="fade-up" data-aos-delay="150">
+            <span class="step-number">03</span>
+            <h3 style="font-size:1.1rem;color:var(--color-primary);" class="my-sm">Saat Menikmati</h3>
+            <p style="font-size:0.9rem;">Merasakan kejutan rasa modern, melihat perubahan warna telang biru menjadi ungu, mengubah persepsi jamu tradisional.</p>
+          </div>
+          <div class="journey-step" data-aos="fade-up" data-aos-delay="200">
+            <span class="step-number">04</span>
+            <h3 style="font-size:1.1rem;color:var(--color-primary);" class="my-sm">Saat Pulang</h3>
+            <p style="font-size:0.9rem;">Meninggalkan gerai dengan tubuh lebih bugar, pikiran lebih fokus, serta rasa ingin menceritakan keunikan ke orang terdekat.</p>
+          </div>
+        </div>
+
+        <p class="brand-quote" style="font-size:1.25rem;padding:var(--space-md);margin-top:var(--space-xl);" data-aos="fade-up">
+          "Merempah ingin setiap pelanggan pulang dengan satu perasaan: bahwa ritual minum mereka hari ini bukan sekadar kebiasaan — tapi sebuah peningkatan."
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 10: MARKET RESEARCH CHARTS ===== -->
+    <section class="section" id="research">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-subtitle">Visualisasi Data &amp; Riset</span>
+          <h2 class="section-title">Market Research Insights</h2>
+        </div>
+
+        <div class="charts-grid">
+          <div class="chart-wrapper" data-aos="fade-up">
+            <h3 class="chart-title">Distribusi Volume Penjualan per Tier</h3>
+            <div class="chart-container"><canvas id="chartSalesTier" class="chart-canvas" role="img" aria-label="Pie chart distribusi volume penjualan: Tier 1 Traffic Magnet 15%, Tier 2 Sweet Spot 65%, Tier 3 Value Builder 20%"></canvas></div>
+          </div>
+          <div class="chart-wrapper" data-aos="fade-up" data-aos-delay="50">
+            <h3 class="chart-title">Segmen Pelanggan Merempah</h3>
+            <div class="chart-container"><canvas id="chartPersonaSegment" class="chart-canvas" role="img" aria-label="Pie chart atau doughnut chart segmentasi persona pengunjung cafe"></canvas></div>
+          </div>
+          <div class="chart-wrapper" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="chart-title">Kafe Terdaftar di Kota Malang (2022–2025)</h3>
+            <div class="chart-container"><canvas id="chartMalangCafeGrowth" class="chart-canvas" role="img" aria-label="Bar chart pertumbuhan jumlah cafe di Malang dari 2022 hingga estimasi 2025"></canvas></div>
+          </div>
+          <div class="chart-wrapper" data-aos="fade-up">
+            <h3 class="chart-title">Pasar Herbal Tradisional Indonesia (Juta USD)</h3>
+            <div class="chart-container"><canvas id="chartHerbalMarket" class="chart-canvas" role="img" aria-label="Line chart proyeksi nilai pasar produk herbal di Indonesia dari 2025 hingga 2032"></canvas></div>
+          </div>
+          <div class="chart-wrapper" data-aos="fade-up" data-aos-delay="50">
+            <h3 class="chart-title">Analisis Keunggulan Radar vs Kompetitor</h3>
+            <div class="chart-container"><canvas id="chartCompetitors" class="chart-canvas" role="img" aria-label="Radar chart perbandingan kompetitif Merempah dengan Ramu Space dan STMJ Tradisional"></canvas></div>
+          </div>
+          <div class="chart-wrapper" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="chart-title">Proyeksi Pertumbuhan Pasar Rempah Indonesia (%)</h3>
+            <div class="chart-container"><canvas id="chartSpiceGrowth" class="chart-canvas" role="img" aria-label="Line chart tren pertumbuhan minat pada minuman rempah"></canvas></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 11: CAMPAIGN & CONTENT ===== -->
+    <section class="section section--soft-bg" id="campaign">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-subtitle">Komunikasi Brand</span>
+          <h2 class="section-title">Campaign &amp; Content Brief</h2>
+        </div>
+
+        <div class="grid grid-3 my-lg">
+          <div class="card" data-aos="fade-up" data-aos-delay="50">
+            <div class="card-icon"><i data-lucide="eye"></i></div>
+            <h3 class="card-title">Visual Artisan</h3>
+            <p class="card-desc">Menampilkan keindahan proses nyata di balik setiap gelas — dari bahan mentah segar hingga sajian akhir. Konten yang membuktikan, bukan sekadar mengklaim.</p>
+          </div>
+          <div class="card" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-icon"><i data-lucide="users"></i></div>
+            <h3 class="card-title">Customer Lifestyle</h3>
+            <p class="card-desc">Dokumentasi momen keseharian nyata pelanggan urban: produktivitas saat WFC, interaksi sosial hangat, dan pemulihan stamina setelah rutinitas harian.</p>
+          </div>
+          <div class="card" data-aos="fade-up" data-aos-delay="150">
+            <div class="card-icon"><i data-lucide="book-open"></i></div>
+            <h3 class="card-title">Aksioma Education</h3>
+            <p class="card-desc">Fakta singkat dan edukasi mingguan tentang bahan herbal nusantara. Disampaikan secara ringan, mengejutkan, dan jauh dari nada menggurui.</p>
+          </div>
+        </div>
+
+        <div class="card" style="background-color:var(--color-bg-soft);border-left:4px solid var(--color-accent);" data-aos="fade-up">
+          <h3 class="card-title" style="display:flex;align-items:center;gap:var(--space-sm);font-size:1.05rem;">
+            <i data-lucide="film" style="color:var(--color-accent);"></i> Kampanye Video
+          </h3>
+          <p class="my-sm">Merempah sedang mempersiapkan kampanye video brand perdana dengan pendekatan sinematik dokumenter. Setiap frame dirancang untuk menjawab satu pertanyaan: <em>"Apakah ini membuat orang ingin hadir?"</em></p>
+          <p style="font-size:0.9rem;color:var(--color-text-light);">Detail produksi dan storyboard bersifat internal. Untuk kolaborasi kreatif, hubungi kami melalui Instagram.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 12: FAQ ===== -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-subtitle">Tanya Jawab</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-container" data-aos="fade-up">
+
+          <!-- FAQ 1 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-1">
+              <span>1. Kenapa cafe ini didirikan?<br><small style="font-size:0.8rem;font-weight:400;color:var(--color-text-light);">Apa alasan terbesar di balik lahirnya cafe ini, dan kenapa memilih konsep minuman tradisional dengan sentuhan modern?</small></span>
+              <i data-lucide="chevron-down" class="faq-icon"></i>
+            </button>
+            <div id="faq-ans-1" class="faq-answer">
+              <div class="faq-answer-content">
+                <p>Merempah lahir dari kegelisahan yang sederhana namun mendalam: <em>Mengapa warisan rempah Nusantara yang sudah terbukti selama berabad-abad justru semakin diasingkan oleh generasinya sendiri?</em></p>
+                <p>Jahe merah sudah ada sebelum minuman bersoda ada. Kunyit sudah dipakai sebagai anti-inflamasi sebelum istilah itu populer di aplikasi kesehatan. Bandrek sudah menghangatkan perut para leluhur jauh sebelum espresso menyentuh tanah Jawa.</p>
+                <p>Merempah didirikan karena ada <strong>celah nyata</strong> yang tidak diisi oleh siapapun: orang-orang urban Malang menginginkan tempat nongkrong yang nyaman, minuman yang tidak hanya nikmat tapi juga tidak membebani tubuh, dan ruang yang mendukung produktivitas sekaligus pemulihan. Transformasi dari <strong>Seduhlur</strong> menjadi <strong>Merempah</strong> adalah <em>value expansion</em> — mengambil fondasi yang sudah ada dan melapisinya dengan identitas yang lebih dalam dan relevan.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-2">
+              <span>2. Apa yang membuat cafe ini berbeda?<br><small style="font-size:0.8rem;font-weight:400;color:var(--color-text-light);">Kalau dibanding cafe lain di Malang, apa yang membuat orang harus datang ke sini?</small></span>
+              <i data-lucide="chevron-down" class="faq-icon"></i>
+            </button>
+            <div id="faq-ans-2" class="faq-answer">
+              <div class="faq-answer-content">
+                <p>Keunggulan utama kami terletak pada strategi <strong>Double Engine USP</strong> yang tidak dimiliki kompetitor lain di Kota Malang:</p>
+                <p><strong>Mesin 1 — Serious Roastery:</strong> Merempah bermitra eksklusif dengan roastery spesialis pilihan. Biji kopi dikurasi dan disangrai dalam batch kecil, dikirim segar secara berkala — khusus untuk profil rasa Merempah. Sangat sedikit kafe di level harga yang sama yang memiliki standar kurasi kopi seperti ini.</p>
+                <p><strong>Mesin 2 — Artisan Apothecary:</strong> Rempah di Merempah bukan topping atau gimmick. Sistem <em>Base Rempah</em> (biang rempah yang direbus segar setiap pagi dari pemasok bahan organik terpercaya pilihan kami) memastikan bahwa setiap tetes jahe, kunyit, dan serai yang masuk ke minuman Anda adalah bahan segar nyata, bukan bubuk sachet.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-3">
+              <span>3. Siapa pelanggan ideal cafe ini?<br><small style="font-size:0.8rem;font-weight:400;color:var(--color-text-light);">Usia, gaya hidup, dan kebiasaannya seperti apa?</small></span>
+              <i data-lucide="chevron-down" class="faq-icon"></i>
+            </button>
+            <div id="faq-ans-3" class="faq-answer">
+              <div class="faq-answer-content">
+                <p>Kami melayani dua segmen persona utama:</p>
+                <p><strong>Persona A — "The Urban Ritualist" (Usia 20–28 tahun):</strong> Mahasiswa tingkat akhir dan pekerja lepas/freelancer yang aktif berpindah untuk WFC. Mereka mencari koneksi internet cepat, meja luas, colokan memadai, dan menu yang estetik namun tidak membebani tubuh. Menu favorit: Rempah Wangi, Telang Langit, Cafe Latte Verde.</p>
+                <p><strong>Persona B — "The Settled Professional" (Usia 30–45 tahun):</strong> Pebisnis lokal dan eksekutif muda yang mencari lokasi pertemuan representatif yang tenang. Mereka menghargai konsistensi rasa, layanan profesional, dan produk yang berkelas tanpa berlebihan. Menu favorit: Kopi Tubruk Seduhlur, STMJ Raja Malam, STMJ Heritage.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-4">
+              <span>4. Pengalaman seperti apa yang ingin dirasakan pelanggan?<br><small style="font-size:0.8rem;font-weight:400;color:var(--color-text-light);">Perasaan apa yang ingin mereka bawa setelah berkunjung?</small></span>
+              <i data-lucide="chevron-down" class="faq-icon"></i>
+            </button>
+            <div id="faq-ans-4" class="faq-answer">
+              <div class="faq-answer-content">
+                <p>Kami merancang <strong>Emotional Journey</strong> bertahap yang membedakan Merempah dari kafe biasa:</p>
+                <p>— <strong>Saat Masuk:</strong> <em>"Ini berbeda."</em> Disambut aroma kopi sangrai dan uap rempah hangat yang autentik.</p>
+                <p>— <strong>Saat Memesan:</strong> <em>"Saya merasa dihargai, bukan digurui."</em> Staf merekomendasikan dengan antusias, seperti bertanya ke teman yang tahu banyak soal rempah.</p>
+                <p>— <strong>Saat Menikmati:</strong> <em>"Kok enak ya?"</em> Momen kejutan positif — rasa tidak seperti yang dibayangkan. Lebih nikmat, lebih smooth, lebih relevan.</p>
+                <p>— <strong>Saat Pulang:</strong> <em>"Besok mau ke sini lagi. Dan harus ceritain ke teman."</em> Bukan sekadar kenyang — tapi merasa sedikit lebih baik, dan ada cerita yang ingin dibagikan.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-5">
+              <span>5. Menu apa yang paling mewakili identitas cafe?<br><small style="font-size:0.8rem;font-weight:400;color:var(--color-text-light);">Jika pelanggan baru hanya bisa mencoba satu, apa itu?</small></span>
+              <i data-lucide="chevron-down" class="faq-icon"></i>
+            </button>
+            <div id="faq-ans-5" class="faq-answer">
+              <div class="faq-answer-content">
+                <p>Identitas Merempah diwakili oleh dua Core Products yang saling melengkapi:</p>
+                <p><strong>Rempah Wangi</strong> — Memenangkan hati lewat <em>rasa dan aroma</em>. Racikan herbal aromatik nusantara yang membuktikan bahwa jamu bisa sangat menyenangkan. Saat seseorang mencium aromanya sebelum meminumnya, ada momen kecil yang terjadi: <em>persepsi mereka tentang jamu berubah selamanya.</em></p>
+                <p><strong>Rempah Telang Langit</strong> — Memenangkan mata dan pikiran lewat <em>visual yang mengejutkan</em>. Perubahan warna dari biru langit menjadi ungu terjadi secara alami saat ditetesi jeruk nipis di hadapan pelanggan. Ini adalah <em>konten yang menciptakan dirinya sendiri</em> — dan hanya bisa dialami langsung di Merempah.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-6">
+              <span>6. Setelah menonton video ini, apa yang ingin orang lakukan?<br><small style="font-size:0.8rem;font-weight:400;color:var(--color-text-light);">Apa key message dan call to action dari kampanye ini?</small></span>
+              <i data-lucide="chevron-down" class="faq-icon"></i>
+            </button>
+            <div id="faq-ans-6" class="faq-answer">
+              <div class="faq-answer-content">
+                <p>Video kampanye Merempah dirancang untuk memicu tiga level konversi:</p>
+                <p><strong>CTA Level 1 — Datang ke Merempah:</strong> Penonton merasa tertarik dan penasaran — bukan sekadar tahu bahwa Merempah ada. Video yang berhasil membuat penonton berpikir: <em>"Aku mau ke sini akhir pekan ini."</em></p>
+                <p><strong>CTA Level 2 — Merekomendasikan Secara Otomatis:</strong> Setelah mengalami momen perubahan warna Telang Langit atau kejutan rasa Rempah Wangi, pelanggan merasa dorongan alami untuk menceritakan pengalamannya kepada orang lain — tanpa diminta. <em>Word-of-mouth yang terprogram lewat pengalaman produk.</em></p>
+                <p><strong>CTA Level 3 — Membuka Peluang Kerjasama Bisnis:</strong> Merempah bukan hanya tempat nongkrong — ini adalah <em>model bisnis yang bisa direplikasi</em>. Video kampanye yang kuat harus mampu menarik perhatian calon mitra bisnis, investor, atau brand partner.</p>
+                <p style="margin-top:var(--space-md);font-style:italic;font-weight:600;color:var(--color-primary);">"Merempah bukan tentang rempah yang kamu kenal. Ini tentang rempah yang belum pernah kamu bayangkan."</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="background-color:var(--color-text-dark);color:var(--color-bg-light);padding:var(--space-xxl) 0 var(--space-lg) 0;">
+    <div class="container">
+      <div class="grid grid-3" style="margin-bottom:var(--space-xl);">
+        <!-- Brand Column -->
+        <div>
+          <img src="assets/images/logo-full.png" alt="Merempah Logo" style="height:48px;filter:brightness(0) invert(1);margin-bottom:var(--space-md);">
+          <p style="color:#888888;font-size:0.9rem;line-height:1.7;">Ruang di mana sejarah menemukan rasanya. Kopi pilihan berkualitas tinggi berpadu dengan kesegaran biang rempah nusantara yang autentik.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 style="color:var(--color-bg-light);font-weight:700;margin-bottom:var(--space-md);">Tautan Cepat</h4>
+          <ul style="display:flex;flex-direction:column;gap:var(--space-xs);font-size:0.9rem;">
+            <li><a href="#about"    style="color:#888888;">Tentang &amp; Asal Usul</a></li>
+            <li><a href="#usp"     style="color:#888888;">Unique Selling Proposition</a></li>
+            <li><a href="#pricing" style="color:#888888;">Strategi Pricing &amp; AOV</a></li>
+            <li><a href="#products"style="color:#888888;">Core Products</a></li>
+            <li><a href="#campaign"style="color:#888888;">Campaign Brief</a></li>
+            <li><a href="#faq"     style="color:#888888;">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Address -->
+        <div>
+          <h4 style="color:var(--color-bg-light);font-weight:700;margin-bottom:var(--space-md);">Kunjungi Kami</h4>
+          <div style="display:flex;flex-direction:column;gap:var(--space-sm);">
+            <!-- Address -->
+            <div style="display:flex;gap:var(--space-sm);align-items:flex-start;">
+              <i data-lucide="map-pin" style="color:var(--color-accent);flex-shrink:0;margin-top:2px;width:16px;height:16px;"></i>
+              <div style="color:#888888;font-size:0.9rem;line-height:1.6;">
+                <strong style="color:#cccccc;">MEREMPAH</strong><br>
+                Jln. Candi Trowulan Ruko Square No. 17<br>
+                Kota Malang, Jawa Timur
+              </div>
+            </div>
+
+            <!-- Instagram only -->
+            <div style="display:flex;gap:var(--space-sm);align-items:center;">
+              <i data-lucide="instagram" style="color:var(--color-accent);flex-shrink:0;width:16px;height:16px;"></i>
+              <a href="https://www.instagram.com/merempah.idn" target="_blank" rel="noopener noreferrer"
+                 style="color:var(--color-accent);font-size:0.9rem;font-weight:600;transition:opacity 0.2s;">
+                @merempah.idn
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div style="border-top:1px solid #222222;padding-top:var(--space-lg);display:flex;flex-wrap:wrap;justify-content:space-between;font-size:0.8rem;color:#555555;gap:var(--space-sm);">
+        <p>&copy; 2026 PT SEDUHLUR INDO GROUP. Hak Cipta Dilindungi Undang-Undang.</p>
+        <p>Malang, Jawa Timur, Indonesia</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CDN Dependencies -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="js/app.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/faq.js"></script>
+  <script src="js/scroll-progress.js"></script>
+
+  <!-- Updated Charts (removed revenue chart, added spice growth) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const defaultOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: { font: { family: 'Montserrat', size: 11 }, padding: 15 }
+          }
+        }
+      };
+
+      const lazyChart = (id, fn) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const obs = new IntersectionObserver((entries, o) => {
+          entries.forEach(e => { if (e.isIntersecting) { fn(el); o.unobserve(el); } });
+        }, { threshold: 0.1 });
+        obs.observe(el);
+      };
+
+      // Chart 1 — Pie: Sales Tier Distribution
+      lazyChart('chartSalesTier', (c) => new Chart(c.getContext('2d'), {
+        type: 'pie',
+        data: {
+          labels: ['Tier 1: Traffic Magnet', 'Tier 2: Sweet Spot', 'Tier 3: Value Builder'],
+          datasets: [{ data: [15, 65, 20], backgroundColor: ['#e2e8f0', '#2b3d29', '#c9a96e'], borderColor: '#ffffff', borderWidth: 3 }]
+        },
+        options: { ...defaultOptions }
+      }));
+
+      // Chart 2 — Doughnut: Customer Persona Segment
+      lazyChart('chartPersonaSegment', (c) => new Chart(c.getContext('2d'), {
+        type: 'doughnut',
+        data: {
+          labels: ['The Urban Ritualist (20-28 thn)', 'The Settled Professional (30-45 thn)', 'Segmen Lain & Walk-in'],
+          datasets: [{ data: [60, 30, 10], backgroundColor: ['#2b3d29', '#c9a96e', '#d1d5db'], borderColor: '#ffffff', borderWidth: 3 }]
+        },
+        options: { ...defaultOptions }
+      }));
+
+      // Chart 3 — Horizontal Bar: Malang Cafe Growth
+      lazyChart('chartMalangCafeGrowth', (c) => new Chart(c.getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['2022', '2023', '2024', '2025 (Est.)'],
+          datasets: [{ label: 'Kafe & Restoran Terdaftar', data: [2200, 2600, 2900, 3500], backgroundColor: ['#d1d5db', '#888888', '#c9a96e', '#2b3d29'], borderRadius: 6 }]
+        },
+        options: { ...defaultOptions, indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
+      }));
+
+      // Chart 4 — Line: Indonesian Herbal Market
+      lazyChart('chartHerbalMarket', (c) => new Chart(c.getContext('2d'), {
+        type: 'line',
+        data: {
+          labels: ['2025', '2027', '2029', '2032'],
+          datasets: [{ label: 'Pasar Produk Herbal (Juta USD)', data: [935, 1010, 1090, 1220], borderColor: '#2b3d29', backgroundColor: 'rgba(43,61,41,0.1)', fill: true, tension: 0.35, borderWidth: 3, pointBackgroundColor: '#c9a96e', pointRadius: 6 }]
+        },
+        options: { ...defaultOptions }
+      }));
+
+      // Chart 5 — Radar: Competitive Advantage
+      lazyChart('chartCompetitors', (c) => new Chart(c.getContext('2d'), {
+        type: 'radar',
+        data: {
+          labels: ['Rasa & Kesegaran', 'Keterjangkauan Harga', 'Fasilitas WFC', 'Nilai Kesehatan', 'Instagramability', 'Keunikan Produk'],
+          datasets: [
+            { label: 'MEREMPAH', data: [9, 8, 9, 9, 8, 9], backgroundColor: 'rgba(43,61,41,0.2)', borderColor: '#2b3d29', borderWidth: 2, pointBackgroundColor: '#2b3d29' },
+            { label: 'Ramu Space', data: [7, 6, 9, 6, 9, 7], backgroundColor: 'rgba(201,169,110,0.2)', borderColor: '#c9a96e', borderWidth: 2, pointBackgroundColor: '#c9a96e' },
+            { label: 'STMJ Tradisional', data: [8, 9, 3, 8, 2, 5], backgroundColor: 'rgba(18,18,18,0.1)', borderColor: '#555555', borderWidth: 1, pointBackgroundColor: '#555555' }
+          ]
+        },
+        options: { responsive: true, maintainAspectRatio: false, scales: { r: { suggestedMin: 0, suggestedMax: 10, ticks: { stepSize: 2 } } }, plugins: { legend: { position: 'bottom', labels: { font: { family: 'Montserrat', size: 10 } } } } }
+      }));
+
+      // Chart 6 — Bar: Spice Industry Growth Rate
+      lazyChart('chartSpiceGrowth', (c) => new Chart(c.getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['2025', '2026', '2027', '2028', '2029'],
+          datasets: [{ label: 'Pertumbuhan Pasar Rempah (%)', data: [10.76, 11.4, 12.1, 12.9, 13.76], backgroundColor: ['rgba(43,61,41,0.6)','rgba(43,61,41,0.7)','rgba(43,61,41,0.8)','rgba(201,169,110,0.7)','rgba(201,169,110,0.9)'], borderRadius: 6 }]
+        },
+        options: { ...defaultOptions, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { callback: v => v + '%' } } } }
+      }));
+    });
+  </script>
+
+</body>
+</html>
